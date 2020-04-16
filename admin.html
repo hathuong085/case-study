@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Quản trị HĐT</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="libs/node_modules/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="libs/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Custom styles for this template-->
+  <link href="../admin/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon ">
+          <i class="fas fa-laugh-wink"></i>
+          <span>Điện thoại ONLINE</span>
+        </div>
+        <div class="sidebar-brand-text mx-3" id="ten"></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fa fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="login.html">Login</a>
+            <a class="collapse-item" href="register.html">Register</a>
+            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a href="javascript:;" class="btn btn-success" onclick="duan.openmodal()">Thêm Điện Thoại</a>
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="thongtin" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 thuong" id="ten">Quản lý</span>
+                <img class="img-profile rounded-circle" id="avartar" src="anhtuvanvien/thuong.jpg">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Thông tin cá nhân
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Thoát
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+      </div>
+      <!-- End of Main Content -->
+      <div class="container-fluid col-xl-12 col-lg-12">
+        <h2>SẢN PHẨM</h2>
+        <div style="width:300px">
+          <select name="nhasx" id="nhasx" oninput="duan.drawtable()" class="form-control">
+            <option value="All" selected>Tất cả</option>
+            <option value="Iphone">Iphone</option>
+            <option value="Samsum">Samsum</option>
+            <option value="Oppo">Oppo</option>
+          </select>
+        </div>
+        <div class="row mt-5">
+          <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th>Số</th>
+                <th>Tên SP</th>
+                <th>NSX</th>
+                <th>Hình ảnh</th>
+                <th>Hệ ĐH</th>
+                <th>Thông số màn hình</th>
+                <th>Camera trước</th>
+                <th>Camera sau</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>ROM</th>
+                <th>Sim</th>
+                <th>DL pin</th>
+                <th>Giá</th>
+                <th>Sale</th>
+                <th>Chỉnh sửa/Xóa</th>
+              </tr>
+            </thead>
+            <tbody id="dssp">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Bạn có chắc chắn thoát không?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal"><i
+              class="fa fa-times-circle mr-5">Không</i></button>
+          <a class="btn btn-primary" href="login.html"><i class="fa fa-check-circle mr-5">Có</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- The Modal -->
+  <div class="modal" id="themsua">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Sản Phẩm</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form id="formthemsua">
+            <input hidden name="id" id="id" value="0">
+            <div class="row form-group ">
+              <div class="col-3">
+                <label>Tên Sản Phẩm</label>
+              </div>
+              <div class="col-4">
+                <input class="form-control" type="text" name="tensp" id="tensp" data-rule-required=true
+                  data-msg-required="Vui lòng nhập tên sản phẩm">
+              </div>
+              <div class="col-2">
+                <label>NSX</label>
+              </div>
+              <div class="col-3">
+                <select name="nsx" id="nsx" class="form-control">
+                  <option value="Iphone" selected>Iphone</option>
+                  <option value="Samsum">Samsum</option>
+                  <option value="Oppo">Oppo</option>
+                </select>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-3">
+                <label>Hình ảnh</label>
+              </div>
+              <div class="col-9">
+                <input class="form-control" type="text" name="anh" id="anh" data-rule-required=true
+                  data-msg-required="Vui lòng tải ảnh">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-3">
+                <label>Thông số màn hình</label>
+              </div>
+              <div class="col-3">
+                <input class="form-control" type="text" name="manhinh" id="manhinh" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông số màn hình">
+              </div>
+              <div class="col-2">
+                <label>Hệ điều hành</label>
+              </div>
+              <div class="col-4">
+                <input class="form-control" type="text" name="hdh" id="hdh" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông số màn hình">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-3">
+                <label>Camera trước</label>
+              </div>
+              <div class="col-3">
+                <input class="form-control" type="text" name="camtr" id="camtr" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông số camera trước">
+              </div>
+              <div class="col-2">
+                <label>Camera sau</label>
+              </div>
+              <div class="col-4">
+                <input class="form-control" type="text" name="camsa" id="camsa" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông số camera sau">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-3">
+                <label>RAM</label>
+              </div>
+              <div class="col-3">
+                <input class="form-control" type="text" name="ram" id="ram" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông số ram">
+              </div>
+              <div class="col-2">
+                <label>ROM</label>
+              </div>
+              <div class="col-4">
+                <input class="form-control" type="text" name="rom" id="rom" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông số rom">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-3">
+                <label>CPU</label>
+              </div>
+              <div class="col-3">
+                <input class="form-control" type="text" name="cpu" id="cpu" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông số rom">
+              </div>
+              <div class="col-2">
+                <label>Sim</label>
+              </div>
+              <div class="col-4">
+                <input class="form-control" type="text" name="sim" id="sim" data-rule-required=true
+                  data-msg-required="Vui lòng nhập thông tin sim">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-3">
+                <label>Dung lượng pin</label>
+              </div>
+              <div class="col-3">
+                <input class="form-control" type="text" name="dlp" id="dlp" data-rule-required=true
+                  data-msg-required="Vui lòng nhập giá">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-3">
+                <label>Giá</label>
+              </div>
+              <div class="col-3">
+                <input class="form-control" type="text" name="gia" id="gia" data-rule-required=true
+                  data-msg-required="Vui lòng nhập giá">
+              </div>
+              <div class="col-2">
+                <label>Sale (%)</label>
+              </div>
+              <div class="col-4">
+                <input class="form-control" type="text" name="sale" id="sale" data-rule-required=true
+                  data-msg-required="Vui lòng nhập giá sale">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <a href="javascript:;" class="btn btn-success" onclick="duan.themsp()">Lưu</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="libs/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="libs/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="libs/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="libs/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="libs/node_modules/jquery-easing/jquery.easing.min.js"></script>
+<script src="libs/node_modules/bootbox/dist/bootbox.min.js"></script>
+<script src="../admin/js/sb-admin-2.min.js"></script>
+<script src="admin.js"></script>
+
+</html>
